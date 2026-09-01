@@ -5,10 +5,49 @@ media:
     output: /images
 
 content:
+  - name: site
+    label: Информация о сайте
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: title
+        label: Название
+        type: string
+      - name: city
+        label: Город
+        type: string
+      - name: eyebrow
+        label: Надпись над заголовком
+        type: string
+      - name: hero_lead
+        label: Главный текст
+        type: text
+      - name: hero_text
+        label: Описание
+        type: text
+      - name: phone
+        label: Телефон
+        type: string
+      - name: whatsapp
+        label: WhatsApp
+        type: string
+      - name: instagram
+        label: Instagram
+        type: string
+      - name: instagram_url
+        label: Ссылка Instagram
+        type: string
+      - name: hero_image
+        label: Главное фото
+        type: image
+
   - name: programs
     label: Программы шоу
-    type: collection
-    path: content/programs
+    type: file
+    path: content/programs.json
+    format: json
+    list: true
     fields:
       - name: title
         label: Название
@@ -23,23 +62,30 @@ content:
         label: Фотография
         type: image
 
-  - name: site
-    label: Информация о сайте
+  - name: gallery
+    label: Галерея
     type: file
-    path: content/site.yml
+    path: content/gallery.json
+    format: json
+    list: true
     fields:
       - name: title
         label: Название
         type: string
+      - name: image
+        label: Фотография
+        type: image
+
+  - name: video
+    label: Видео
+    type: file
+    path: content/video.json
+    format: json
+    list: true
+    fields:
+      - name: url
+        label: Ссылка на видео
+        type: string
       - name: description
         label: Описание
         type: text
-      - name: phone
-        label: Телефон
-        type: string
-      - name: whatsapp
-        label: WhatsApp
-        type: string
-      - name: instagram
-        label: Instagram
-        type: string
