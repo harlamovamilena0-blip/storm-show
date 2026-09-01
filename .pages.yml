@@ -42,7 +42,7 @@ content:
         label: Главное фото
         type: image
 
-  - name: programs
+  - name: show_programs
     label: Программы шоу
     type: file
     path: content/programs.json
