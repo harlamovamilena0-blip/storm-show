@@ -1,109 +1,22 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="STORM SHOW — огненные, световые и пиротехнические шоу в Астане.">
-  <title>STORM SHOW — огненные и световые шоу в Астане</title>
-  <style>
-    :root{--bg:#050505;--panel:#101010;--text:#f7f3ed;--muted:#b9b2aa;--fire:#ff6a00;--fire2:#ffb000}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Arial,sans-serif;line-height:1.5}
-    a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
-    nav{position:fixed;z-index:10;top:0;left:0;right:0;background:rgba(5,5,5,.72);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
-    nav .inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-    .logo{font-weight:900;letter-spacing:.12em;font-size:20px}.logo span{color:var(--fire)}
-    .navlinks{display:flex;gap:28px;color:#ddd;font-size:14px}.navlinks a:hover{color:#fff}
-    .hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:
-      linear-gradient(90deg,rgba(0,0,0,.9) 0%,rgba(0,0,0,.62) 45%,rgba(0,0,0,.3) 100%),
-      linear-gradient(0deg,rgba(0,0,0,.72),transparent 50%),
-      url('images/hero.jpg') center/cover no-repeat}
-    .hero:after{content:"";position:absolute;inset:auto -10% -25% -10%;height:50%;background:radial-gradient(ellipse,rgba(255,89,0,.2),transparent 65%);pointer-events:none}
-    .hero-content{padding-top:72px;max-width:720px;position:relative;z-index:1}
-    .eyebrow{color:var(--fire2);font-weight:800;letter-spacing:.2em;text-transform:uppercase;font-size:13px}
-    h1{font-size:clamp(58px,10vw,126px);line-height:.88;margin:18px 0 24px;letter-spacing:-.055em}
-    .lead{font-size:clamp(20px,2.5vw,31px);max-width:700px;margin:0 0 30px}
-    .sub{color:var(--muted);max-width:640px;font-size:16px}
-    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border-radius:999px;font-weight:800;border:1px solid rgba(255,255,255,.16)}
-    .btn.fire{background:linear-gradient(135deg,var(--fire),var(--fire2));color:#111;border:0}
-    .btn.dark{background:rgba(0,0,0,.35)}
-    section{padding:96px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
-    .kicker{color:var(--fire2);font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:12px}
-    h2{font-size:clamp(34px,5vw,62px);line-height:1;margin:10px 0 0;letter-spacing:-.04em}
-    .section-head p{color:var(--muted);max-width:440px;margin:0}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);padding:26px;border-radius:20px;min-height:190px}
-    .num{font-size:13px;color:var(--fire2);font-weight:900}.card h3{font-size:22px;margin:24px 0 8px}.card p{color:var(--muted);margin:0}
-    .gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
-    .gallery figure{margin:0;overflow:hidden;border-radius:18px;background:#111;min-height:240px}
-    .gallery img{width:100%;height:100%;min-height:240px;object-fit:cover;display:block;transition:transform .5s}
-    .gallery figure:hover img{transform:scale(1.04)}
-    .gallery figure:nth-child(1),.gallery figure:nth-child(10){grid-column:span 7}
-    .gallery figure:nth-child(2),.gallery figure:nth-child(3),.gallery figure:nth-child(4),.gallery figure:nth-child(5),
-    .gallery figure:nth-child(6),.gallery figure:nth-child(7),.gallery figure:nth-child(8),.gallery figure:nth-child(9),
-    .gallery figure:nth-child(11),.gallery figure:nth-child(12){grid-column:span 5}
-    .cta{background:linear-gradient(135deg,#17100b,#0b0b0b);border:1px solid rgba(255,120,0,.22);border-radius:28px;padding:58px}
-    .cta h2{max-width:760px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
-    .contact a{background:#0d0d0d;border:1px solid rgba(255,255,255,.08);padding:20px;border-radius:16px}
-    .contact small{display:block;color:var(--muted);margin-bottom:5px}
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:30px 0;color:var(--muted);font-size:14px}
-    @media(max-width:850px){.navlinks{display:none}.cards{grid-template-columns:1fr 1fr}.gallery{grid-template-columns:1fr 1fr}.gallery figure,.gallery figure:nth-child(n){grid-column:span 1}.gallery img{min-height:220px}.section-head{display:block}.section-head p{margin-top:15px}}
-    @media(max-width:560px){section{padding:70px 0}.cards,.contact,.gallery{grid-template-columns:1fr}.hero{background-position:58% center}.hero-content{padding-top:100px}.cta{padding:34px 24px}h1{font-size:66px}.gallery figure,.gallery figure:nth-child(n){grid-column:span 1}}
-  </style>
-</head>
-<body>
-<nav><div class="wrap inner">
-  <a class="logo" href="#">STORM<span>•</span>SHOW</a>
-  <div class="navlinks"><a href="#shows">Шоу</a><a href="#gallery">Галерея</a><a href="#contact">Контакты</a></div>
-</div></nav>
-
-<header class="hero">
-  <div class="wrap hero-content">
-    <div class="eyebrow">Астана • Казахстан</div>
-    <h1>STORM<br><span style="color:#ff6a00">SHOW</span></h1>
-    <p class="lead">Огненные и световые шоу, которые невозможно забыть.</p>
-    <p class="sub">Фаер-шоу, световые и пиротехнические постановки, салюты и уникальные программы для праздников и мероприятий.</p>
-    <div class="buttons">
-      <a class="btn fire" href="https://wa.me/77070402737?text=Здравствуйте!%20Хочу%20заказать%20STORM%20SHOW">Заказать шоу</a>
-      <a class="btn dark" href="#gallery">Смотреть выступления</a>
-    </div>
-  </div>
-</header>
-
-<section id="shows"><div class="wrap">
-  <div class="section-head"><div><div class="kicker">Что мы делаем</div><h2>Шоу под ваше событие</h2></div>
-  <p>Количество артистов, состав программы и длительность выступления подбираются индивидуально.</p></div>
-  <div class="cards">
-    <article class="card"><div class="num">01</div><h3>Фаер-шоу</h3><p>Динамичные постановки с огненным реквизитом и эффектными финалами.</p></article>
-    <article class="card"><div class="num">02</div><h3>Световое шоу</h3><p>Современные LED-программы для сцены, площадки и вечерних мероприятий.</p></article>
-    <article class="card"><div class="num">03</div><h3>Пиротехническое шоу</h3><p>Яркие пиротехнические эффекты как часть праздничной программы.</p></article>
-    <article class="card"><div class="num">04</div><h3>Уникальные постановки</h3><p>Разные форматы и комбинации реквизита — программу можно собрать под задачу.</p></article>
-  </div>
-</div></section>
-
-<section id="gallery"><div class="wrap">
-  <div class="section-head"><div><div class="kicker">Живые эмоции</div><h2>Галерея</h2></div><p>Фотографии с выступлений STORM SHOW.</p></div>
-  <div class="gallery">
-    <figure><img src="images/show-01.jpg" alt="STORM SHOW — фото выступления 1"></figure><figure><img src="images/show-02.jpg" alt="STORM SHOW — фото выступления 2"></figure><figure><img src="images/show-03.jpg" alt="STORM SHOW — фото выступления 3"></figure><figure><img src="images/show-04.jpg" alt="STORM SHOW — фото выступления 4"></figure><figure><img src="images/show-05.jpg" alt="STORM SHOW — фото выступления 5"></figure><figure><img src="images/show-06.jpg" alt="STORM SHOW — фото выступления 6"></figure><figure><img src="images/show-07.jpg" alt="STORM SHOW — фото выступления 7"></figure><figure><img src="images/show-08.jpg" alt="STORM SHOW — фото выступления 8"></figure><figure><img src="images/show-09.jpg" alt="STORM SHOW — фото выступления 9"></figure><figure><img src="images/show-10.jpg" alt="STORM SHOW — фото выступления 10"></figure><figure><img src="images/show-11.jpg" alt="STORM SHOW — фото выступления 11"></figure><figure><img src="images/show-12.jpg" alt="STORM SHOW — фото выступления 12"></figure>
-  </div>
-</div></section>
-
-<section id="contact"><div class="wrap">
-  <div class="cta">
-    <div class="kicker">Готовы зажечь событие?</div>
-    <h2>Расскажите, какой праздник вы планируете — подберём программу.</h2>
-    <div class="buttons">
-      <a class="btn fire" href="https://wa.me/77070402737?text=Здравствуйте!%20Хочу%20узнать%20о%20программах%20STORM%20SHOW">Написать в WhatsApp</a>
-      <a class="btn dark" href="tel:+77070402737">Позвонить</a>
-    </div>
-    <div class="contact">
-      <a href="tel:+77070402737"><small>Телефон / WhatsApp</small>+7 707 040 27 37</a>
-      <a href="https://instagram.com/storm_show_astana"><small>Instagram</small>@storm_show_astana</a>
-    </div>
-  </div>
-</div></section>
-
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STORM SHOW</title>
+<style>
+body{margin:0;background:#050505;color:#f7f3ed;font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}nav{position:fixed;top:0;left:0;right:0;z-index:5;background:#050505cc;padding:22px 0}.nav{display:flex;justify-content:space-between}.logo{font-weight:900;letter-spacing:.12em}.logo b{color:#ff6a00}.links{display:flex;gap:25px}.hero{min-height:100vh;display:flex;align-items:center;background-position:center;background-size:cover;position:relative}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000e,#0008,#0003)}.hero>div{position:relative}.ey{color:#ffb000;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-size:clamp(60px,10vw,125px);line-height:.85;margin:20px 0}.hero h1 span{color:#ff6a00}.lead{font-size:clamp(21px,2.5vw,31px);max-width:700px}.muted{color:#b9b2aa;max-width:650px}.btn{display:inline-block;padding:15px 22px;border-radius:30px;margin:25px 8px 0 0;font-weight:800}.fire{background:linear-gradient(135deg,#ff6a00,#ffb000);color:#111}.dark{border:1px solid #555}section{padding:90px 0}h2{font-size:clamp(35px,5vw,60px);margin:10px 0 35px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#101010;border:1px solid #222;padding:25px;border-radius:18px}.num{color:#ffb000}.card h3{font-size:22px}.card p{color:#aaa}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:16px}.video{background:#101010;padding:22px;border-radius:18px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contact a{background:#101010;padding:20px;border-radius:15px}small{display:block;color:#aaa;margin-bottom:5px}footer{padding:30px 0;border-top:1px solid #222;color:#999}
+@media(max-width:800px){.links{display:none}.cards,.gallery,.contact{grid-template-columns:1fr}.gallery img{height:260px}}
+</style></head><body>
+<nav><div class="wrap nav"><div class="logo">STORM<b>•</b>SHOW</div><div class="links"><a href="#shows">Шоу</a><a href="#gallery">Галерея</a><a href="#video">Видео</a><a href="#contact">Контакты</a></div></div></nav>
+<header class="hero" id="hero"><div class="wrap"><div class="ey" id="ey"></div><h1>STORM<br><span>SHOW</span></h1><p class="lead" id="lead"></p><p class="muted" id="desc"></p><a class="btn fire" id="wa">Заказать шоу</a><a class="btn dark" href="#gallery">Смотреть выступления</a></div></header>
+<section id="shows"><div class="wrap"><div class="ey">Что мы делаем</div><h2>Шоу под ваше событие</h2><div class="cards" id="programs"></div></div></section>
+<section id="gallery"><div class="wrap"><div class="ey">Живые эмоции</div><h2>Галерея</h2><div class="gallery" id="galleryGrid"></div></div></section>
+<section id="video"><div class="wrap"><div class="ey">Смотрите выступления</div><h2>Видео</h2><div id="videoGrid"></div></div></section>
+<section id="contact"><div class="wrap"><div class="ey">Готовы зажечь событие?</div><h2>Расскажите, какой праздник вы планируете — подберём программу.</h2><a class="btn fire" id="wa2">Написать в WhatsApp</a><div class="contact"><a id="phone"><small>Телефон / WhatsApp</small></a><a id="insta" target="_blank"><small>Instagram</small></a></div></div></section>
 <footer><div class="wrap">© 2026 STORM SHOW • Астана</div></footer>
-</body>
-</html>
+<script>
+async function j(p){return (await fetch(p)).json()}
+(async()=>{let[s,p,g,v]=await Promise.all([j('/content/site.json'),j('/content/programs.json'),j('/content/gallery.json'),j('/content/video.json')]);
+document.getElementById('ey').textContent=s.eyebrow;document.getElementById('lead').textContent=s.hero_lead;document.getElementById('desc').textContent=s.hero_text;document.getElementById('hero').style.backgroundImage=`url('${s.hero_image}')`;
+let wa=`https://wa.me/${s.whatsapp}?text=${encodeURIComponent('Здравствуйте! Хочу заказать STORM SHOW')}`;document.getElementById('wa').href=wa;document.getElementById('wa2').href=wa;
+let ph=document.getElementById('phone');ph.href='tel:+${s.whatsapp}';ph.innerHTML='<small>Телефон / WhatsApp</small>'+s.phone;let ins=document.getElementById('insta');ins.href=s.instagram_url;ins.innerHTML='<small>Instagram</small>'+s.instagram;
+document.getElementById('programs').innerHTML=p.map(x=>`<article class="card"><div class="num">${x.number}</div><h3>${x.title}</h3><p>${x.description}</p></article>`).join('');
+document.getElementById('galleryGrid').innerHTML=g.map(x=>`<img src="${x.image}" alt="${x.title}" loading="lazy">`).join('');
+document.getElementById('videoGrid').innerHTML=v.filter(x=>x.url).map(x=>`<div class="video"><h3>${x.title}</h3><p>${x.description||''}</p><a href="${x.url}" target="_blank">${x.url}</a></div>`).join('')||'<div class="video"><p>Видео скоро появится.</p></div>';})();
+</script></body></html>
