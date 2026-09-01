@@ -1,22 +1,232 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>STORM SHOW</title>
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="STORM SHOW — огненные, световые и пиротехнические шоу в Астане.">
+<title>STORM SHOW — шоу в Астане</title>
 <style>
-body{margin:0;background:#050505;color:#f7f3ed;font-family:Arial,sans-serif}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}nav{position:fixed;top:0;left:0;right:0;z-index:5;background:#050505cc;padding:22px 0}.nav{display:flex;justify-content:space-between}.logo{font-weight:900;letter-spacing:.12em}.logo b{color:#ff6a00}.links{display:flex;gap:25px}.hero{min-height:100vh;display:flex;align-items:center;background-position:center;background-size:cover;position:relative}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000e,#0008,#0003)}.hero>div{position:relative}.ey{color:#ffb000;letter-spacing:.2em;text-transform:uppercase}.hero h1{font-size:clamp(60px,10vw,125px);line-height:.85;margin:20px 0}.hero h1 span{color:#ff6a00}.lead{font-size:clamp(21px,2.5vw,31px);max-width:700px}.muted{color:#b9b2aa;max-width:650px}.btn{display:inline-block;padding:15px 22px;border-radius:30px;margin:25px 8px 0 0;font-weight:800}.fire{background:linear-gradient(135deg,#ff6a00,#ffb000);color:#111}.dark{border:1px solid #555}section{padding:90px 0}h2{font-size:clamp(35px,5vw,60px);margin:10px 0 35px}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:#101010;border:1px solid #222;padding:25px;border-radius:18px}.num{color:#ffb000}.card h3{font-size:22px}.card p{color:#aaa}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery img{width:100%;height:300px;object-fit:cover;border-radius:16px}.video{background:#101010;padding:22px;border-radius:18px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contact a{background:#101010;padding:20px;border-radius:15px}small{display:block;color:#aaa;margin-bottom:5px}footer{padding:30px 0;border-top:1px solid #222;color:#999}
-@media(max-width:800px){.links{display:none}.cards,.gallery,.contact{grid-template-columns:1fr}.gallery img{height:260px}}
-</style></head><body>
-<nav><div class="wrap nav"><div class="logo">STORM<b>•</b>SHOW</div><div class="links"><a href="#shows">Шоу</a><a href="#gallery">Галерея</a><a href="#video">Видео</a><a href="#contact">Контакты</a></div></div></nav>
-<header class="hero" id="hero"><div class="wrap"><div class="ey" id="ey"></div><h1>STORM<br><span>SHOW</span></h1><p class="lead" id="lead"></p><p class="muted" id="desc"></p><a class="btn fire" id="wa">Заказать шоу</a><a class="btn dark" href="#gallery">Смотреть выступления</a></div></header>
-<section id="shows"><div class="wrap"><div class="ey">Что мы делаем</div><h2>Шоу под ваше событие</h2><div class="cards" id="programs"></div></div></section>
-<section id="gallery"><div class="wrap"><div class="ey">Живые эмоции</div><h2>Галерея</h2><div class="gallery" id="galleryGrid"></div></div></section>
-<section id="video"><div class="wrap"><div class="ey">Смотрите выступления</div><h2>Видео</h2><div id="videoGrid"></div></div></section>
-<section id="contact"><div class="wrap"><div class="ey">Готовы зажечь событие?</div><h2>Расскажите, какой праздник вы планируете — подберём программу.</h2><a class="btn fire" id="wa2">Написать в WhatsApp</a><div class="contact"><a id="phone"><small>Телефон / WhatsApp</small></a><a id="insta" target="_blank"><small>Instagram</small></a></div></div></section>
-<footer><div class="wrap">© 2026 STORM SHOW • Астана</div></footer>
+:root{
+  --bg:#050505;--panel:#0d0d0d;--text:#f7f3ed;--muted:#aaa39b;
+  --orange:#ff5a00;--gold:#ffb000;--line:rgba(255,255,255,.10)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1180px,92%);margin:auto}
+nav{position:fixed;z-index:20;top:0;left:0;right:0;background:rgba(5,5,5,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:900;letter-spacing:.13em}
+.logo b{color:var(--orange)}
+.links{display:flex;gap:28px;font-size:14px;color:#ddd}
+.links a:hover{color:#fff}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:
+linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.62) 48%,rgba(0,0,0,.25)),
+linear-gradient(0deg,rgba(0,0,0,.8),transparent 55%),
+url("images/show-10.jpg") center/cover no-repeat}
+.hero:after{content:"";position:absolute;width:600px;height:600px;right:-220px;bottom:-300px;background:radial-gradient(circle,rgba(255,75,0,.34),transparent 65%);pointer-events:none}
+.hero-content{padding-top:75px;position:relative;z-index:1;max-width:800px}
+.ey{color:var(--gold);font-weight:900;letter-spacing:.2em;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(65px,11vw,140px);line-height:.82;letter-spacing:-.065em;margin:20px 0 28px}
+h1 span{color:var(--orange)}
+.lead{font-size:clamp(22px,3vw,34px);line-height:1.08;max-width:720px;margin:0 0 18px;font-weight:700}
+.muted{color:var(--muted);max-width:680px;font-size:17px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 23px;border-radius:999px;font-weight:900;border:1px solid rgba(255,255,255,.18);transition:.2s}
+.btn:hover{transform:translateY(-2px)}
+.fire{background:linear-gradient(135deg,var(--orange),var(--gold));color:#111;border:0}
+.dark{background:rgba(0,0,0,.28)}
+section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:42px}
+h2{font-size:clamp(38px,5.5vw,68px);line-height:.95;letter-spacing:-.05em;margin:10px 0 0}
+.section-head p{color:var(--muted);max-width:430px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:linear-gradient(160deg,#151515,#0a0a0a);border:1px solid var(--line);border-radius:22px;padding:27px;min-height:220px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,105,0,.38)}
+.num{font-size:13px;color:var(--gold);font-weight:900}
+.card h3{font-size:23px;margin:35px 0 10px}
+.card p{color:var(--muted);margin:0}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.gallery figure{margin:0;overflow:hidden;border-radius:20px;background:#111;min-height:250px}
+.gallery img{width:100%;height:100%;min-height:250px;object-fit:cover;display:block;transition:.5s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figure:nth-child(1),.gallery figure:nth-child(10){grid-column:span 7}
+.gallery figure:nth-child(n+2):not(:nth-child(10)){grid-column:span 5}
+.video-list{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.video{background:#101010;border:1px solid var(--line);padding:28px;border-radius:20px}
+.video h3{margin-top:0}
+.video p{color:var(--muted)}
+.video a{color:var(--gold);word-break:break-word}
+.cta{background:linear-gradient(135deg,#1b1009,#0b0b0b);border:1px solid rgba(255,105,0,.24);border-radius:30px;padding:60px}
+.cta h2{max-width:800px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:30px}
+.contact a{background:#0b0b0b;border:1px solid var(--line);padding:22px;border-radius:17px}
+.contact small{display:block;color:var(--muted);margin-bottom:5px}
+footer{border-top:1px solid var(--line);padding:30px 0;color:#777;font-size:14px}
+@media(max-width:850px){
+  .links{display:none}.cards{grid-template-columns:1fr 1fr}.section-head{display:block}.section-head p{margin-top:16px}
+  .gallery{grid-template-columns:1fr 1fr}.gallery figure,.gallery figure:nth-child(n){grid-column:span 1}
+  .video-list,.contact{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  section{padding:75px 0}.cards,.gallery{grid-template-columns:1fr}
+  .gallery figure,.gallery figure:nth-child(n){grid-column:span 1}
+  .hero{background-position:58% center}.hero-content{padding-top:95px}.cta{padding:36px 24px}
+  h1{font-size:68px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav">
+    <a class="logo" href="#">STORM<b>•</b>SHOW</a>
+    <div class="links">
+      <a href="#shows">Шоу</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#video">Видео</a>
+      <a href="#contact">Контакты</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="hero">
+  <div class="wrap hero-content">
+    <div class="ey" id="ey">АСТАНА • КАЗАХСТАН</div>
+    <h1>STORM<br><span>SHOW</span></h1>
+    <p class="lead" id="lead">Огненные и световые шоу, которые невозможно забыть.</p>
+    <p class="muted" id="desc">Фаер-шоу, световые и пиротехнические постановки, салюты и уникальные программы для праздников и мероприятий.</p>
+    <div class="buttons">
+      <a class="btn fire" id="wa" href="#">Заказать шоу</a>
+      <a class="btn dark" href="#gallery">Смотреть выступления</a>
+    </div>
+  </div>
+</header>
+
+<section id="shows">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="ey">Что мы делаем</div><h2>Шоу под ваше событие</h2></div>
+      <p>Количество артистов, состав программы и длительность выступления подбираются индивидуально.</p>
+    </div>
+    <div class="cards" id="programs"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="ey">Живые эмоции</div><h2>Галерея</h2></div>
+      <p>Реальные выступления STORM SHOW. Нажмите на фото, чтобы открыть его крупнее.</p>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="ey">Смотрите выступления</div><h2>Видео</h2></div>
+      <p>Здесь можно размещать ссылки на ваши видео.</p>
+    </div>
+    <div class="video-list" id="videoGrid"></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="cta">
+      <div class="ey">Готовы зажечь событие?</div>
+      <h2>Расскажите, какой праздник вы планируете — подберём программу.</h2>
+      <div class="buttons">
+        <a class="btn fire" id="wa2" href="#">Написать в WhatsApp</a>
+        <a class="btn dark" id="phone" href="#">Позвонить</a>
+      </div>
+      <div class="contact">
+        <a id="phoneCard" href="#">
+          <small>Телефон / WhatsApp</small>
+          +7 707 040 27 37
+        </a>
+        <a id="insta" href="#" target="_blank" rel="noopener">
+          <small>Instagram</small>
+          @storm_show_astana
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 STORM SHOW • Астана</div>
+</footer>
+
 <script>
-async function j(p){return (await fetch(p)).json()}
-(async()=>{let[s,p,g,v]=await Promise.all([j('/content/site.json'),j('/content/programs.json'),j('/content/gallery.json'),j('/content/video.json')]);
-document.getElementById('ey').textContent=s.eyebrow;document.getElementById('lead').textContent=s.hero_lead;document.getElementById('desc').textContent=s.hero_text;document.getElementById('hero').style.backgroundImage=`url('${s.hero_image}')`;
-let wa=`https://wa.me/${s.whatsapp}?text=${encodeURIComponent('Здравствуйте! Хочу заказать STORM SHOW')}`;document.getElementById('wa').href=wa;document.getElementById('wa2').href=wa;
-let ph=document.getElementById('phone');ph.href='tel:+${s.whatsapp}';ph.innerHTML='<small>Телефон / WhatsApp</small>'+s.phone;let ins=document.getElementById('insta');ins.href=s.instagram_url;ins.innerHTML='<small>Instagram</small>'+s.instagram;
-document.getElementById('programs').innerHTML=p.map(x=>`<article class="card"><div class="num">${x.number}</div><h3>${x.title}</h3><p>${x.description}</p></article>`).join('');
-document.getElementById('galleryGrid').innerHTML=g.map(x=>`<img src="${x.image}" alt="${x.title}" loading="lazy">`).join('');
-document.getElementById('videoGrid').innerHTML=v.filter(x=>x.url).map(x=>`<div class="video"><h3>${x.title}</h3><p>${x.description||''}</p><a href="${x.url}" target="_blank">${x.url}</a></div>`).join('')||'<div class="video"><p>Видео скоро появится.</p></div>';})();
-</script></body></html>
+async function getJson(path){
+  const response = await fetch(path + "?v=" + Date.now());
+  if(!response.ok) throw new Error(path);
+  return response.json();
+}
+
+(async function(){
+  try{
+    const [site, programs, gallery, videos] = await Promise.all([
+      getJson("/content/site.json"),
+      getJson("/content/programs.json"),
+      getJson("/content/gallery.json"),
+      getJson("/content/video.json")
+    ]);
+
+    document.title = (site.title || "STORM SHOW") + " — шоу в Астане";
+    document.getElementById("ey").textContent = site.eyebrow || "АСТАНА • КАЗАХСТАН";
+    document.getElementById("lead").textContent = site.hero_lead || "";
+    document.getElementById("desc").textContent = site.hero_text || "";
+    if(site.hero_image) document.getElementById("hero").style.backgroundImage =
+      "linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.62) 48%,rgba(0,0,0,.25)),linear-gradient(0deg,rgba(0,0,0,.8),transparent 55%),url('" + site.hero_image + "')";
+
+    const wa = "https://wa.me/" + (site.whatsapp || "77070402737") +
+      "?text=" + encodeURIComponent("Здравствуйте! Хочу заказать STORM SHOW");
+    document.getElementById("wa").href = wa;
+    document.getElementById("wa2").href = wa;
+
+    const phone = site.phone || "+7 707 040 27 37";
+    const digits = (site.whatsapp || "77070402737").replace(/\D/g,"");
+    document.getElementById("phone").href = "tel:+" + digits;
+    document.getElementById("phoneCard").href = "tel:+" + digits;
+    document.getElementById("phoneCard").innerHTML =
+      "<small>Телефон / WhatsApp</small>" + phone;
+
+    const insta = site.instagram || "@storm_show_astana";
+    const instaUrl = site.instagram_url || "https://instagram.com/storm_show_astana";
+    document.getElementById("insta").href = instaUrl;
+    document.getElementById("insta").innerHTML = "<small>Instagram</small>" + insta;
+
+    document.getElementById("programs").innerHTML = (programs || []).map((x,i) =>
+      "<article class='card'><div class='num'>" + (x.number || String(i+1).padStart(2,"0")) +
+      "</div><h3>" + (x.title || "") + "</h3><p>" + (x.description || "") + "</p>" +
+      (x.price ? "<p style='margin-top:18px;color:#ffb000;font-weight:800'>" + x.price + "</p>" : "") +
+      "</article>"
+    ).join("");
+
+    document.getElementById("galleryGrid").innerHTML = (gallery || []).map(x =>
+      "<figure><a href='" + x.image + "' target='_blank'><img src='" + x.image +
+      "' alt='" + (x.title || "STORM SHOW") + "' loading='lazy'></a></figure>"
+    ).join("");
+
+    const activeVideos = (videos || []).filter(x => x.url);
+    document.getElementById("videoGrid").innerHTML = activeVideos.length
+      ? activeVideos.map(x => "<div class='video'><h3>" + (x.title || "Видео STORM SHOW") +
+        "</h3><p>" + (x.description || "") + "</p><a href='" + x.url +
+        "' target='_blank' rel='noopener'>Открыть видео →</a></div>").join("")
+      : "<div class='video'><h3>Видео скоро появится</h3><p>Добавьте ссылку на видео через панель управления.</p></div>";
+  }catch(error){
+    console.error(error);
+    document.getElementById("programs").innerHTML =
+      "<article class='card'><div class='num'>01</div><h3>STORM SHOW</h3><p>Фаер-шоу, световые и пиротехнические программы в Астане.</p></article>";
+    document.getElementById("galleryGrid").innerHTML =
+      "<p style='color:#aaa'>Галерея загружается…</p>";
+  }
+})();
+</script>
+</body>
+</html>
