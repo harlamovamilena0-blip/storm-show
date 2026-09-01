@@ -1,0 +1,45 @@
+media:
+  - name: images
+    label: Фотографии
+    input: images
+    output: /images
+
+content:
+  - name: programs
+    label: Программы шоу
+    type: collection
+    path: content/programs
+    fields:
+      - name: title
+        label: Название
+        type: string
+      - name: description
+        label: Описание
+        type: rich-text
+      - name: price
+        label: Цена
+        type: string
+      - name: image
+        label: Фотография
+        type: image
+
+  - name: site
+    label: Информация о сайте
+    type: file
+    path: content/site.yml
+    fields:
+      - name: title
+        label: Название
+        type: string
+      - name: description
+        label: Описание
+        type: text
+      - name: phone
+        label: Телефон
+        type: string
+      - name: whatsapp
+        label: WhatsApp
+        type: string
+      - name: instagram
+        label: Instagram
+        type: string
